@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black;color:white;text-align:center;">
+<h2>Don't Touch Red</h2>
+<div id="player" style="width:50px;height:50px;background:blue;position:absolute;"></div>
+<div id="enemy" style="width:50px;height:50px;background:red;position:absolute;top:100px;left:100px;"></div>
+
+<script>
+let p=document.getElementById("player");
+let e=document.getElementById("enemy");
+
+document.addEventListener("mousemove",a=>{
+  p.style.left=a.x+"px";
+  p.style.top=a.y+"px";
+
+  let pr=p.getBoundingClientRect();
+  let er=e.getBoundingClientRect();
+
+  if(!(pr.right<er.leftpr.left>er.right
+pr.bottom<er.top||pr.top>er.bottom)){
+    alert("Game Over");
+  }
+});
+</script>
+</body>
+</html>
